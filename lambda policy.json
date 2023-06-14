@@ -1,0 +1,42 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EC2Permissions",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeInstances",
+                "ec2:StopInstances"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "CloudWatchPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:PutMetricData",
+                "cloudwatch:DescribeAlarms",
+                "cloudwatch:PutMetricAlarm"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "SNSPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "sns:Subscribe"
+            ],
+            "Resource": "arn:aws:sns:us-east-1:___:instance_uptime_above_threshold"
+        },
+        {
+            "Sid": "CloudWatchLogsPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        }
+    ]
+}
