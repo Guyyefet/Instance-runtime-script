@@ -26,7 +26,10 @@
             "Action": [
                 "sns:Subscribe"
             ],
-            "Resource": "arn:aws:sns:us-east-1:___:instance_uptime_above_threshold"
+            "Resource": [
+            "arn:aws:sns:us-east-1:___:arn:aws:sns:us-east-1:___:instance_one_week_alarm",
+            "arn:aws:sns:us-east-1:___:arn:aws:sns:us-east-1:___:instance_two_weeks_alarm"
+            ]
         },
         {
             "Sid": "CloudWatchLogsPermissions",
